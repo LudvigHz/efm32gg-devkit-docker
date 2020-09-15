@@ -1,0 +1,78 @@
+Version 2.82
+* Added support for Zero Gecko.
+* Rebranded "Energy Micro" -> "Silicon Labs".
+* Fixed issue with sync loss when unlocking via command line.
+* Fixed issue with switch -v (it is for --version not for --verify).
+
+Version 2.81
+* Fixed bug in demos for Wonder Gecko.
+* Updated JLink DLL to version 4.68 to fix "buffer size too small" issue.
+* Added --resettype to cli parameters.
+
+Version 2.80
+* Initial support for Wonder Gecko.
+* Added an utility for taking screenshots when running the LCD in
+  direct drive mode.
+* SWO printf() console added. 
+* Errors in CLI mode goes to stderr instead of stdout (Thanks Uwe!)
+* Fixed a bug where locking the User page would also lock the lock page.
+* Fixed a bug where locking the main flash for devices with flash block
+  size != 512 would produce incorrect results.
+* Fixed a bug in the flashing tab where it would not be possible to set the
+  start address to the user page.
+* Fixed a bug where using --serialno and then --usb on the command line would
+  use the serialno device instead of the usb device.
+* When updating the DK firmware, the installer now checks if there is available
+  space on the flash.
+
+Version 2.72
+* Added support for selecting devices by serial number.
+* Support for flashing binaries of full flash size.
+* Improved flashloader performance.
+* Improved handling of WDOG in flashloader.
+* New CLI command for resetting the kit.
+* Use standard return values in CLI mode.
+* eACommander now remembers the paths from previous use.
+* Make mcu information copyable to clipboard.
+* Show extended information about demos.
+
+Version 2.71
+* Support configuration recovery for some kits.
+
+Version 2.70
+* Support for the GG/LG STK.
+* Use demos installed from the kit software instead of including them.
+  This frees up space and makes more demos available.
+  This also requires that you have installed the required packages
+  in simplicity studio.
+
+Version 2.65
+* Move help online.
+* Initial support for Giant and Leopard STKs.
+* Preliminary support for reading SWO streams in command line mode.
+* Support for external flashloader
+* Display Unique number for connected EFMs in DVK tab.
+
+Version 2.60:
+* Added support for DK3750 kits.
+* Added support for Giant and Leopard Gecko
+* Added demos for DK3750.
+
+Version 2.50:
+* Added demos for Tiny Gecko Starter Kit.
+* Fix bug in windows XP when installing packages.
+
+Version 2.20:
+* Increased flashloader speed.
+* Support for Tiny Gecko in Flashloader.
+* Automatic check for firmware updates that are downloaded through Simlicity
+Studio.
+* Support for upcoming Tiny Starter Kits.
+
+Version 2.11
+* Initial Tiny support (alpha)
+* Fixed use of help within Simplicity Studio
+* New icon
+
+Version 2.0:
+* Initial GUI version
