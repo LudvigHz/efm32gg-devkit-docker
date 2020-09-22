@@ -1,0 +1,114 @@
+==== Version 1.14 ====
+[General]
+ * Fixed issue with displaying wrong value of running average current 
+   and running average power.
+
+==== Version 1.13 ====
+[General]
+ * Added Zero Gecko support.
+ * Improved SWO parser.
+ * Less IRQs and PCs are lost in high speed mode.
+ * Fixed issue with displaying incorrect IRQs names on the graph.
+
+==== Version 1.12 ====
+[General]
+ * Demos are now sorted ascending.
+ * Fixed issue with reporting power in low-speed mode.
+ * High speed mode is no longer considered experimental.
+ * Clarified use of LGPL licensensed libraries.
+ * Fixed issue where disabling SWO output would not work.
+ * New SWO data parser algorithm.
+ * Improved setupSWO() function example.
+
+==== Version 1.11 ====
+[General]
+ * Removed statusbar and replaced it with new view in the AEM graph.
+ * Support for Wonder Gecko.
+ * Demo dialog now supports demos that use the external flash.
+ * Fixed the setupSWO() function for Leopard and Wonder parts.
+ * Improved performance when looking up function names.
+ * Fixed an issue where negative energy would be displayed in the 
+   energy profile.
+[Linux]
+ * SWO output should now work correctly (updated the .so file)
+
+==== Version 1.10 ====
+[Demos]
+ * The profiler now uses the downloaded demos from Simplicity Studio.
+   Please download the BSPs for your kit before using the demo mode.
+ * Using SWO in demo mode is now optional. The binaries in the BSPs
+   check the first word in the userpage (address 0x0FE00000) for a
+   zero. If found, it does not enable SWO output. This lowers power
+   consumption.
+
+==== Version 1.01 ====
+[General]
+ * Help is now online
+ * Better support for Linux
+
+==== Version 1.00 ====
+[General]
+ * Added experimental support for High speed AEM sampling. This
+   requires a firmware upgrade.
+ * Samples are now based on microseconds.
+
+[Graph]
+ * Zoom levels are now reported a 1x, 2x, etc
+ * Graph when zoomed out averages samples instead of displaying all of them.
+
+[Codeview]
+ * Fixed typo in the help text (not in the setupSWO() function).
+
+==== Version 0.995 ===
+[Demos]
+ * Updated demos to version 2.0.2
+ * Added internal temperature demo
+
+[Graph]
+ * Added display of voltage along with current.
+
+==== Version 0.99 ====
+[Demos]
+ * Added Tiny Gecko demos.
+ * Demo mode now checks what kind of board you have and selects applicable
+   demos.
+ * Added box for selecting interrupt vector table.
+ * Updated flashloader to work with tiny gecko.
+ * Other minor tweaks.
+
+==== Version 0.93 ====
+[Graph]
+ * Fixed some calculations for averages.
+
+
+==== Version 0.91 ====
+[General]
+ * Added functionality for loading traces
+
+[GUI]
+ * Merge Start/Stop button
+ * Added preference markers
+ * Added help functionality.
+
+[Sampler]
+ * Moved sampling into it's own thread.
+ * Moved setup of sampling interval into preferences.
+
+[Graph]
+ * Implemented zoom level.
+ * Ability to setup the graph in preferences.
+ * Ability to set markers in right-click menu.
+ * Use markers to measure a small region of the graph.
+
+[Codeview]
+ * Ability to set user specified syntax highlightning colors
+ * Show the help text after user has clicked on the graph.
+
+[Energy Profile]
+ * Added a progress bar to show energy contribution graphically
+ * Double click on a function to select a color for drawing that function
+   in the graph. 
+
+==== Version 0.90 Technology Preview ====
+ * Initial Release
+
