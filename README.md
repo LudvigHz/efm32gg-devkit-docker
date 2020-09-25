@@ -5,6 +5,10 @@
 ## Installation
 
 ```sh
+# For a version using the codesourcery toolchain (recommended)
+docker pull ludvighz/efm32gg-devkit:codesourcery
+
+# For a version using the latest gcc arm toolchain
 docker pull ludvighz/efm32gg-devkit
 ```
 
