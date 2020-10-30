@@ -1,0 +1,29 @@
+FROM gcc:4
+MAINTAINER Ludvig Hozman <ludvig123@gmail.com>
+
+RUN dpkg --add-architecture i386
+RUN apt-get update
+RUN apt-get -y install git curl vim indent gawk flex bison texinfo \
+    gettext python-dev  libncurses5 lib32z1 libqtgui4:i386 libusb-0.1:i386 \
+    libelf1:i386 bc
+
+
+WORKDIR /install
+
+RUN wget http://www.ptxdist.org/software/ptxdist/download/ptxdist-2013.07.1.tar.bz2
+RUN tar -xjvf ptxdist-2013.07.1.tar.bz2 && rm ptxdist-2013.07.1.tar.bz2
+RUN cd ptxdist-2013.07.1 && ./configure && make && make install
+
+WORKDIR /opt
+COPY OSELAS.Toolchain-2012.12.0 ./OSELAS.Toolchain-2012.12.0
+
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+RUN usermod -a -G root docker
+
+RUN setfacl -R -m docker:rwx /opt
+RUN chown -R docker:docker /opt
+
+USER docker
+WORKDIR /work
+
+ENV PATH $PATH:/usr/local/bin

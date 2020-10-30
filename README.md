@@ -4,6 +4,13 @@
 
 ## Installation
 
+There are a couple different versions of the container. Mainly, there is one with JLink, the
+codesourcery toolchain and gcc 10 for simple embedded programming. In addition, there is a container
+with `ptxdist` and the OSELAS.Toolchain() for embedded linux programming. See instructions for each
+of the containers below.
+
+### Gcc/codesourcery toolchain
+
 ```sh
 # For a version using the codesourcery toolchain (recommended)
 docker pull ludvighz/efm32gg-devkit:codesourcery
@@ -12,11 +19,28 @@ docker pull ludvighz/efm32gg-devkit:codesourcery
 docker pull ludvighz/efm32gg-devkit
 ```
 
+### uClinux development with OSELAS.Toolchain()
+
+There is also a container with the tools to compile and build uClinux for usage on the EFM32GG.
+This contains `ptxdist` and the OSELAS.Toolchain() project.
+
+```sh
+docker pull ludvighz/efm32gg-devkit:uclinux
+```
+
 ## Usage
 
 You can use the container just by entering the container and running commands. ex.
 
 Assuming you are running the command from the project folder.
+
+#### Linux
+
+```sh
+docker run -it --privileged -v $(pwd):/work -v /dev/bus/usb:/dev/bus/usb ludvighz/efm32gg-devkit
+```
+
+#### MacOS
 
 ```sh
 docker run -it --privileged -v $(pwd):/work -v /dev/bus/usb:/dev/bus/usb ludvighz/efm32gg-devkit
@@ -24,7 +48,7 @@ docker run -it --privileged -v $(pwd):/work -v /dev/bus/usb:/dev/bus/usb ludvigh
 
 Now you can use `gdb`, compile your code, or flash your board.
 
-### Running GUI applications
+### Running GUI applications (Linux only)
 
 The container contains the `eAprofiler` to profile the board. In order to run it, the container will
 need access to the host machine X server.
