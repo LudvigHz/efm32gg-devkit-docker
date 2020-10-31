@@ -11,7 +11,9 @@ WORKDIR /tools
 
 COPY eACommander ./eACommander
 
-RUN ln -s /tools/eACommander/start-eACommander.sh /tools/eACommander/eACommander.sh
+COPY .gdbinit /root/
+
+RUN ln -s /opt/eACommander/start-eACommander.sh /opt/eACommander/eACommander.sh
 
 COPY JLink ./JLink
 COPY libjlink.conf /etc/ld.so.conf.d/
