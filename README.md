@@ -19,15 +19,6 @@ docker pull ludvighz/efm32gg-devkit:codesourcery
 docker pull ludvighz/efm32gg-devkit
 ```
 
-### uClinux development with OSELAS.Toolchain()
-
-There is also a container with the tools to compile and build uClinux for usage on the EFM32GG.
-This contains `ptxdist` and the OSELAS.Toolchain() project.
-
-```sh
-docker pull ludvighz/efm32gg-devkit:uclinux
-```
-
 ## Usage
 
 You can use the container just by entering the container and running commands. ex.
@@ -72,3 +63,21 @@ You can now run GUI applications
 ```sh
 eAprofiler # Will open eAprofiler in a window on your machine
 ```
+
+### Embedded linux with ptxdist and OSELAS.Toolchain()
+
+There is also a container with the tools to compile and build uClinux for usage on the EFM32GG.
+This contains `ptxdist` and the OSELAS.Toolchain() project.
+
+> The version is quite old. This container contains OSELAS.Toolchain-2012.12.0
+> and ptxdist-2013.07.1
+
+```sh
+docker pull ludvighz/efm32gg-devkit:ptxdist
+```
+
+#### Usage
+
+This container can be used just like the other ones. Note however that ptxdist might behave
+differently based on where you mount your project. I have personally had best success with mounting
+my project at `/work`.
