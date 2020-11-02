@@ -1,0 +1,42 @@
+From 017d0a393159511d8adf23e04fc7544ee540f4ff Mon Sep 17 00:00:00 2001
+From: Ludvig Hozman <ludvig123@gmail.com>
+Date: Sat, 31 Oct 2020 14:48:35 +0100
+Subject: [PATCH] Remove check for non-root user
+
+---
+ bin/ptxdist | 12 ------------
+ 1 file changed, 12 deletions(-)
+
+diff --git a/bin/ptxdist b/bin/ptxdist
+index 733d792cf..3a376b81b 100755
+--- a/bin/ptxdist
++++ b/bin/ptxdist
+@@ -156,17 +156,6 @@ check_nonstandard() {
+ 
+ 
+ 
+-#
+-# abort if ptxdist is run as root
+-#
+-check_uid() {
+-	if [ ${UID} -eq 0 ]; then
+-		echo
+-		echo "${PTXDIST_LOG_PROMPT}error: refusing to run PTXdist as root"
+-		echo
+-		exit 1
+-	fi
+-}
+ 
+ 
+ 
+@@ -2438,7 +2427,6 @@ setup_export() {
+ ########################################################################
+ 
+ main() {
+-	check_uid &&
+ 	check_path &&
+ 
+ 	setup_topdir &&
+-- 
+2.27.0
+

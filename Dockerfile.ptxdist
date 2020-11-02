@@ -27,7 +27,7 @@ COPY OSELAS.Toolchain-2012.12.0 ./OSELAS.Toolchain-2012.12.0
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 RUN usermod -a -G root docker
 
-USER root
+USER docker
 WORKDIR /work
 
 ENV PATH $PATH:/usr/local/bin
